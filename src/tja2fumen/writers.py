@@ -43,7 +43,7 @@ def write_fumen(path_out: str, song: FumenCourse) -> None:
                     else:
                         # Max value for H -> 0xffff -> 65535
                         extra_vals = [min(65535, note.score_init),
-                                      min(65535, note.score_diff * 4)]
+                                      min(65535, note.score_diff)]
                     note_struct.extend(extra_vals)
                     note_struct.append(note.duration)
                     write_struct(file, song.header.order,
